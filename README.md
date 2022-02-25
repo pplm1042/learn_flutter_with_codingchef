@@ -1,16 +1,6 @@
 # learn_flutter_with_codingchef
 
-A new Flutter project.
+02월 28일까지 매운맛 끝내기
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2022. 02. 25.  
+<Stateful 개념 정리> State가 변한 State객체를 비용이 싼 Stateful wiget으로 만들어서 계속 Rebuild하고 MyApp State객체는 Element Tree에서 Mutable하게 존재하면서 필요할 때마다 새로운 State를 저장함과 동시에 새롭게 Rebuild 된 Stateful 위젯만을 업데이트 해줍니다.
