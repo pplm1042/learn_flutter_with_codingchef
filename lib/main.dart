@@ -1,39 +1,61 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:learn_flutter_with_codingchef/example/first_app.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
+class MyApp extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Coding Chef',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(),
-    );
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return MyAppState();
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
+class MyAppState extends State<MyApp>{
+  int counter = 0;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TextButton(
-            onPressed: () {
-              firstApp();
-            },
-            child: Text('이것'))
-      ],
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('You have pushed the button this many times:'),
+              Text(
+                '$counter',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+              SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  FloatingActionButton(
+                      child: Icon(Icons.add),
+                      onPressed: (){
+                        setState(() {
+                          counter++;
+                          print("$counter");
+                        });
+                      }),
+                  SizedBox(width: 20,),
+                  FloatingActionButton(
+                      child: Icon(Icons.remove),
+                      onPressed: (){
+                        setState(() {
+                          counter--;
+                          print("$counter");
+                        });
+                      }),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
