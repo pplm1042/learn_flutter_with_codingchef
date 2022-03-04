@@ -61,16 +61,16 @@ void main() {
   
 * 난수 생성(math라이브러리와 Set을 이용한 로또 프로그램) 
   
-    import 'dart:math';
+      import 'dart:math';
 
-    void main() {
+      void main() {
 
-      Set<int> lottoFinal = lottoNumber();
-      Set<int> myFinal = myNumber();
+        Set<int> lottoFinal = lottoNumber();
+        Set<int> myFinal = myNumber();
 
-      checkNumber(lottoFinal, myFinal);
+        checkNumber(lottoFinal, myFinal);
 
-    }
+      }
 
     Set<int> lottoNumber(){
 
