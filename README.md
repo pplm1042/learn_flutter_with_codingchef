@@ -104,19 +104,19 @@ void main() {
   
       void checkNumber(lottoSet, mySet) {
 
-          int match = 0;
+        int match = 0;
 
-          for(int lotto in lottoSet){
-            for(int myNum in mySet) {
+        for(int lotto in lottoSet){
+          for(int myNum in mySet) {
 
-              if(lotto == myNum) {
-                match++;
-                print('당첨 번호 $myNum');
-              }
+            if(lotto == myNum) {
+              match++;
+              print('당첨 번호 $myNum');
             }
           }
-          print('$match개의 당첨번호가 있습니다!'); 
-       }
+        }
+        print('$match개의 당첨번호가 있습니다!'); 
+      }
 
   
 
