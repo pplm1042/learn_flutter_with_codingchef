@@ -72,7 +72,7 @@ void main() {
 
   Set<int> lottoNumber(){
     
-      final random = Random();
+    final random = Random();
     final Set<int> lottoSet = {};
     
     while(lottoSet.length != 6) {
@@ -102,19 +102,18 @@ Set<int> myNumber(){
 
   void checkNumber(lottoSet, mySet) {
   
-  int match = 0;
-  
-  for(int lotto in lottoSet){
-    for(int myNum in mySet) {
-      
-      if(lotto == myNum) {
-        match++;
-        print('당첨 번호 $myNum');
+    int match = 0;
+
+    for(int lotto in lottoSet){
+      for(int myNum in mySet) {
+
+        if(lotto == myNum) {
+          match++;
+          print('당첨 번호 $myNum');
+        }
       }
     }
-  }
-  
-  print('$match개의 당첨번호가 있습니다!');
+    print('$match개의 당첨번호가 있습니다!'); 
   }
 
 
