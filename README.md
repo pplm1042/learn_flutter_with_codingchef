@@ -70,7 +70,7 @@ void main() {
   
 }
 
-Set<int> lottoNumber(){
+  Set<int> lottoNumber(){
     
     final random = Random();
     final Set<int> lottoSet = {};
