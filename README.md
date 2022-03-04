@@ -72,22 +72,22 @@ void main() {
 
       }
 
-    Set<int> lottoNumber(){
+      Set<int> lottoNumber(){
 
-      final random = Random();
-      final Set<int> lottoSet = {};
+        final random = Random();
+        final Set<int> lottoSet = {};
 
-      while(lottoSet.length != 6) {
-      lottoSet.add(random.nextInt(45) + 1);
+        while(lottoSet.length != 6) {
+        lottoSet.add(random.nextInt(45) + 1);
+        }
+
+        print('당첨 번호');
+        print(lottoSet.toList());
+
+        return lottoSet;
       }
 
-      print('당첨 번호');
-      print(lottoSet.toList());
-
-      return lottoSet;
-    }
-
-    Set<int> myNumber(){
+      Set<int> myNumber(){
 
         final random = Random();
         final Set<int> mySet = {};
@@ -100,24 +100,24 @@ void main() {
         print(mySet.toList());
 
         return mySet;
-      }
+        }
 
   
-    void checkNumber(lottoSet, mySet) {
+        void checkNumber(lottoSet, mySet) {
 
-      int match = 0;
+          int match = 0;
 
-      for(int lotto in lottoSet){
-        for(int myNum in mySet) {
+          for(int lotto in lottoSet){
+            for(int myNum in mySet) {
 
-          if(lotto == myNum) {
-            match++;
-            print('당첨 번호 $myNum');
+              if(lotto == myNum) {
+                match++;
+                print('당첨 번호 $myNum');
+              }
+            }
           }
+          print('$match개의 당첨번호가 있습니다!'); 
         }
-      }
-      print('$match개의 당첨번호가 있습니다!'); 
-    }
 
   
 
