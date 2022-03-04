@@ -11,12 +11,13 @@
 * const는 컴파일 시에 상수화된다. 이는 런타임 시에도 immutable한 상수가 된다는 의미이다.
 * final은 런타임 시에 상수화된다.
 
-void main() {
-  
-  const constTime = DateTime.now();
-  final finalTime = DateTime.now();
-  
-}
+    void main() {
+
+      const constTime = DateTime.now();
+      final finalTime = DateTime.now();
+
+    }
+    
 * const는 에러가 발생한다. DateTime은 호출될 때마다 값이 변경되기 때문에 런타임 시에 지정이 되어야한다. 컴파일 시에 상수값이 되는 const변수에는 이 값을 할당할 수 없다.
 * final는 에러가 발생하지 않는다. 그래서 await 통해 특정 URL로부터 값을 가져올 경우 final을 써준다.
 * const는 언제쓰냐? 3.14같은 Pi값은 그 값이 어디서든 변하지 않기 때문에 컴파일 때부터 상수화를 시킨다.
@@ -27,17 +28,17 @@ void main() {
 <반복문과 난수 생성, cacade notation> 
 * 반복문 1(For - in range)
 
-    void main() {
-    List<String> rainbow = ['빨', '주', '노', '초', '파', '남', '보'];
+      void main() {
+        List<String> rainbow = ['빨', '주', '노', '초', '파', '남', '보'];
 
-    for(int i=0; i<rainbow.length; i++){
-      print(rainbow[i]);
-    }
+        for(int i=0; i<rainbow.length; i++){
+          print(rainbow[i]);
+        }
 
-    for(String x in rainbow){
-      print(x);
-    }
-    }
+        for(String x in rainbow){
+          print(x);
+        }
+      }
 
   
                                  
