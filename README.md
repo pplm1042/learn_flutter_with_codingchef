@@ -72,7 +72,7 @@ void main() {
 
   Set<int> lottoNumber(){
     
-    final random = Random();
+      final random = Random();
     final Set<int> lottoSet = {};
     
     while(lottoSet.length != 6) {
