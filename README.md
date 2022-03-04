@@ -11,12 +11,12 @@
 * const는 컴파일 시에 상수화된다. 이는 런타임 시에도 immutable한 상수가 된다는 의미이다.
 * final은 런타임 시에 상수화된다.
 
-    void main() {
+        void main() {
 
-      const constTime = DateTime.now();
-      final finalTime = DateTime.now();
+          const constTime = DateTime.now();
+          final finalTime = DateTime.now();
 
-    }
+        }
     
 * const는 에러가 발생한다. DateTime은 호출될 때마다 값이 변경되기 때문에 런타임 시에 지정이 되어야한다. 컴파일 시에 상수값이 되는 const변수에는 이 값을 할당할 수 없다.
 * final는 에러가 발생하지 않는다. 그래서 await 통해 특정 URL로부터 값을 가져올 경우 final을 써준다.
