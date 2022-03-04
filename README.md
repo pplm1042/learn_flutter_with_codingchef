@@ -27,6 +27,7 @@ void main() {
 <반복문과 난수 생성, cacade notation> 
 * 반복문 1(For - in range)
 
+'''
 void main() {
 List<String> rainbow = ['빨', '주', '노', '초', '파', '남', '보'];
 
@@ -38,6 +39,7 @@ for(String x in rainbow){
   print(x);
 }
 }
+'''
 
   
                                  
