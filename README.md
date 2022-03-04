@@ -27,17 +27,15 @@ void main() {
 <반복문과 난수 생성, cacade notation> 
 * 반복문 1(For - in range)
 
-  void main() {
-    List<String> rainbow = ['빨', '주', '노', '초', '파', '남', '보'];
+List<String> rainbow = ['빨', '주', '노', '초', '파', '남', '보'];
 
-    for(int i=0; i<rainbow.length; i++){
-      print(rainbow[i]);
-    }
+for(int i=0; i<rainbow.length; i++){
+  print(rainbow[i]);
+}
 
-    for(String x in rainbow){
-      print(x);
-    }
-  }
+for(String x in rainbow){
+  print(x);
+}
   
                                  
 * 반복문 2(For - Each) : For - in 보다 효율적이라고 한다.
