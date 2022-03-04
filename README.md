@@ -53,9 +53,9 @@
       }
   
 *  cascade notation
-   ** cascade notation인 ..은 한 객체의 맴버함수를 호출하거나 속성에 접근할 수 있다.
-   ** shuffle()은 섞어준다. API 참고
-   ** sublist는 리스트의 특정 인덱스들을 불러올 때 사용한다.
+   * cascade notation인 ..은 한 객체의 맴버함수를 호출하거나 속성에 접근할 수 있다.
+   * shuffle()은 섞어준다. API 참고
+   * sublist는 리스트의 특정 인덱스들을 불러올 때 사용한다.
    
        var test = (List<int>.generate(45, (i) => i+1)..shuffle()).sublist(0,6);
        print(test);
