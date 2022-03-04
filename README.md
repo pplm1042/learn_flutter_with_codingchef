@@ -21,3 +21,101 @@ void main() {
 * final는 에러가 발생하지 않는다. 그래서 await 통해 특정 URL로부터 값을 가져올 경우 final을 써준다.
 * const는 언제쓰냐? 3.14같은 Pi값은 그 값이 어디서든 변하지 않기 때문에 컴파일 때부터 상수화를 시킨다.
 * final 변수는 rebuild될 수 있다.
+
+
+## 2022.03.04.
+<반복문과 난수 생성, cacade notation> 
+* 반복문 1(For - in range)
+
+  void main() {
+    List<String> rainbow = ['빨', '주', '노', '초', '파', '남', '보'];
+
+    for(int i=0; i<rainbow.length; i++){
+      print(rainbow[i]);
+    }
+
+    for(String x in rainbow){
+      print(x);
+    }
+  }
+  
+                                 
+* 반복문 2(For - Each) : For - in 보다 효율적이라고 한다.
+  void main() {
+    List<String> carMaker = ['BMW', 'Benz', 'Audi', 'Jaguar'];
+
+    carMaker.forEach((name){
+      print(name);
+    });                             
+  }
+  
+*  cascade notation
+   ** cascade notation인 ..은 한 객체의 맴버함수를 호출하거나 속성에 접근할 수 있다.
+   ** shuffle()은 섞어준다. API 참고
+   ** sublist는 리스트의 특정 인덱스들을 불러올 때 사용한다.
+   var test = (List<int>.generate(45, (i) => i+1)..shuffle()).sublist(0,6);
+   print(test);
+  
+* 난수 생성(math라이브러리와 Set을 이용한 로또 프로그램) 
+  
+import 'dart:math';
+  
+void main() {
+  
+  Set<int> lottoFinal = lottoNumber();
+  Set<int> myFinal = myNumber();
+  
+  checkNumber(lottoFinal, myFinal);
+  
+}
+
+Set<int> lottoNumber(){
+    
+    final random = Random();
+    final Set<int> lottoSet = {};
+    
+    while(lottoSet.length != 6) {
+      lottoSet.add(random.nextInt(45) + 1);
+    }
+    
+    print('당첨 번호');
+    print(lottoSet.toList());
+    
+    return lottoSet;
+  }
+
+Set<int> myNumber(){
+    
+    final random = Random();
+    final Set<int> mySet = {};
+    
+    while(mySet.length != 6) {
+      mySet.add(random.nextInt(45)+1);
+    }
+    
+    print('나의 번호');
+    print(mySet.toList());
+    
+    return mySet;
+  }
+
+void checkNumber(lottoSet, mySet) {
+  
+  int match = 0;
+  
+  for(int lotto in lottoSet){
+    for(int myNum in mySet) {
+      
+      if(lotto == myNum) {
+        match++;
+        print('당첨 번호 $myNum');
+      }
+    }
+  }
+  
+  print('$match개의 당첨번호가 있습니다!');
+}
+
+
+
+
