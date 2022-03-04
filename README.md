@@ -42,13 +42,13 @@ void main() {
   
                                  
 * 반복문 2(For - Each) : For - in 보다 효율적이라고 한다.
-      void main() {
-        List<String> carMaker = ['BMW', 'Benz', 'Audi', 'Jaguar'];
+        void main() {
+          List<String> carMaker = ['BMW', 'Benz', 'Audi', 'Jaguar'];
 
-        carMaker.forEach((name){
-          print(name);
-        });                             
-      }
+          carMaker.forEach((name){
+            print(name);
+          });                             
+        }
   
 *  cascade notation
    ** cascade notation인 ..은 한 객체의 맴버함수를 호출하거나 속성에 접근할 수 있다.
