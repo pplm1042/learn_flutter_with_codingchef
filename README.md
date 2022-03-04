@@ -99,10 +99,10 @@ void main() {
         print(mySet.toList());
 
         return mySet;
-        }
+      }
 
   
-        void checkNumber(lottoSet, mySet) {
+      void checkNumber(lottoSet, mySet) {
 
           int match = 0;
 
@@ -116,7 +116,7 @@ void main() {
             }
           }
           print('$match개의 당첨번호가 있습니다!'); 
-        }
+       }
 
   
 
