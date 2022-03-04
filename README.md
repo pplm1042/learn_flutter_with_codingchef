@@ -102,6 +102,7 @@ Set<int> myNumber(){
     return mySet;
   }
 
+  
   void checkNumber(lottoSet, mySet) {
   
     int match = 0;
@@ -118,6 +119,7 @@ Set<int> myNumber(){
     print('$match개의 당첨번호가 있습니다!'); 
   }
 
+  
 
 
 
