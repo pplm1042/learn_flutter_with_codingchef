@@ -61,16 +61,16 @@ void main() {
   
 * 난수 생성(math라이브러리와 Set을 이용한 로또 프로그램) 
   
-import 'dart:math';
-  
-void main() {
-  
-  Set<int> lottoFinal = lottoNumber();
-  Set<int> myFinal = myNumber();
-  
-  checkNumber(lottoFinal, myFinal);
-  
-}
+    import 'dart:math';
+
+    void main() {
+
+      Set<int> lottoFinal = lottoNumber();
+      Set<int> myFinal = myNumber();
+
+      checkNumber(lottoFinal, myFinal);
+
+    }
 
     Set<int> lottoNumber(){
 
@@ -87,37 +87,37 @@ void main() {
       return lottoSet;
     }
 
-Set<int> myNumber(){
-    
-    final random = Random();
-    final Set<int> mySet = {};
-    
-    while(mySet.length != 6) {
-      mySet.add(random.nextInt(45)+1);
-    }
-    
-    print('나의 번호');
-    print(mySet.toList());
-    
-    return mySet;
-  }
+    Set<int> myNumber(){
+
+        final random = Random();
+        final Set<int> mySet = {};
+
+        while(mySet.length != 6) {
+          mySet.add(random.nextInt(45)+1);
+        }
+
+        print('나의 번호');
+        print(mySet.toList());
+
+        return mySet;
+      }
 
   
-  void checkNumber(lottoSet, mySet) {
-  
-    int match = 0;
+    void checkNumber(lottoSet, mySet) {
 
-    for(int lotto in lottoSet){
-      for(int myNum in mySet) {
+      int match = 0;
 
-        if(lotto == myNum) {
-          match++;
-          print('당첨 번호 $myNum');
+      for(int lotto in lottoSet){
+        for(int myNum in mySet) {
+
+          if(lotto == myNum) {
+            match++;
+            print('당첨 번호 $myNum');
+          }
         }
       }
+      print('$match개의 당첨번호가 있습니다!'); 
     }
-    print('$match개의 당첨번호가 있습니다!'); 
-  }
 
   
 
