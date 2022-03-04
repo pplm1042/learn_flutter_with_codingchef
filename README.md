@@ -57,8 +57,8 @@
    * shuffle()은 섞어준다. API 참고
    * sublist는 리스트의 특정 인덱스들을 불러올 때 사용한다.
    
-       var test = (List<int>.generate(45, (i) => i+1)..shuffle()).sublist(0,6);
-       print(test);
+               var test = (List<int>.generate(45, (i) => i+1)..shuffle()).sublist(0,6);
+               print(test);
   
 * 난수 생성(math라이브러리와 Set을 이용한 로또 프로그램) 
   
