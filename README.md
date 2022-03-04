@@ -72,19 +72,19 @@ void main() {
   
 }
 
-Set<int> lottoNumber(){
-    
-    final random = Random();
-    final Set<int> lottoSet = {};
-    
-    while(lottoSet.length != 6) {
-      lottoSet.add(random.nextInt(45) + 1);
-    }
-    
-    print('당첨 번호');
-    print(lottoSet.toList());
-    
-    return lottoSet;
+  Set<int> lottoNumber(){
+
+  final random = Random();
+  final Set<int> lottoSet = {};
+
+  while(lottoSet.length != 6) {
+  lottoSet.add(random.nextInt(45) + 1);
+  }
+
+  print('당첨 번호');
+  print(lottoSet.toList());
+
+  return lottoSet;
   }
 
 Set<int> myNumber(){
