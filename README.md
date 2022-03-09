@@ -124,10 +124,10 @@
 ## 2022.03.09.
 <Future - async 심화 개념 정리> 
 1. Future
-        * 다트에 의해서 future 객체가 내부적인 배열에 등록
-        * Future 관련해서 실행되어야 하는 코드들이 이벤트 큐에 등록
-        * 불완전한 future 객체가 반환
-        * Synchronous 방식으로 실행되어야 할 코드 먼저 실행
-        * 최종적으로 실제적인 data값이 future 객체로 
+* 다트에 의해서 future 객체가 내부적인 배열에 등록
+* Future 관련해서 실행되어야 하는 코드들이 이벤트 큐에 등록
+* 불완전한 future 객체가 반환
+* Synchronous 방식으로 실행되어야 할 코드 먼저 실행
+* 최종적으로 실제적인 data값이 future 객체로 
 
 
