@@ -130,18 +130,129 @@
 4. Synchronous 방식으로 실행되어야 할 코드 먼저 실행
 5. 최종적으로 실제적인 data값이 future 객체로 전달
 
+
+#### Future 예제1
+
         void main() {
           print('Before the Future');
-          Future((){print('Running the Future');}).then((_){print('Future is complete');});
+          Future((){print('Running the Future');}).
+          then((_){print('Future is complete');});
           print('After the Future');
         }
         
-        // 출력순서
-        Before the Future
-        After the Future
-        Running the Future
-        Future is complete
+        // 출력
+        Before the Future(Synchronous)
+        After the Future(Synchronous)
+        Running the Future(EventLoop) <- EventLoop(선입선출)는 Synchronous먼저 처리 한 후 나중에 실행
+        Future is complete(EventLoop)
         
+### Async method
+1. 메서드를 통해서 나오는 결과물은 future
+2. await 키워드를 만날때까지 synchronous 방식으로 코드처리
+3. await 키워드를 만나면 future가 완료될 때까지 대기
+4. future가 완료되자마자 그 다음 코드들을 실행
+
+
+#### Async 예제1
+        
+        String createOrderMessage(){
+          var order = fetchUserOrder();
+          return 'Your order is: $order';
+        }
+
+        Future<String> fetchUserOrder(){
+          return Future.delayed(
+            Duration(seconds: 2), 
+            () => 'Large Latte',
+          );
+        }
+
+        void main() {
+          print('Fetching user order...');
+          print(createOrderMessage());
+        }
+        
+        // 출력
+        Fetching user order...
+        Your order is: Instance of '_Future<String>'
+        
+#### Async 예제1        
+        
+        Future<String> createOrderMessage() async{
+          print('synchronous');
+          var order = await fetchUserOrder();
+          return 'Your order is: $order';
+        }
+
+        Future<String> fetchUserOrder(){
+          return Future.delayed(
+            Duration(seconds: 2), 
+            () => 'Large Latte',
+          );
+        }
+
+        void main() async{
+          print('Fetching user order...');
+          print(await createOrderMessage());
+          print('sync1');
+        }
+        
+        // 출력
+        Fetching user order...
+        synchronous
+        Your order is: Large Latte
+        sync1 <- await을 만나면 synchronous의 처리를 잠시 멈추는 것을 알 수 있다.
+        
+#### Async 예제2  
+        
+       
+        void main() async {
+          methodA();
+          await methodB();
+          await methodC('main');
+          methodD();
+        }
+
+        methodA(){
+          print('A');
+        }
+
+        methodB() async {
+          print('B start');
+          await methodC('B');
+          print('B end');
+        }
+
+        methodC(String from) async {
+          print('C start from $from');
+
+          Future( () {
+            print('C running Future from $from');
+          }).then((_) {
+            print('C end of Future from $from');
+          });
+
+          print('C end from $from');
+        }
+
+        methodD() {
+          print('D');
+        }
+        
+        // 출력
+        A
+        B start
+        C start from B
+        C end from B
+        B end
+        C start from main
+        C end from main
+        D
+        C running Future from B <- EventLoop에 들어갔기 때문에 가장 나중에 출력된다.
+        C end of Future from B
+        C running Future from main
+        C end of Future from main
+  
         
 
 
