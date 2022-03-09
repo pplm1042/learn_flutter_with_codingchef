@@ -130,4 +130,20 @@
 4. Synchronous 방식으로 실행되어야 할 코드 먼저 실행
 5. 최종적으로 실제적인 data값이 future 객체로 전달
 
+        void main() {
+          print('Before the Future');
+          Future((){print('Running the Future');}).then((_){print('Future is complete');});
+          print('After the Future');
+        }
+        
+        // 출력순서
+        Before the Future
+        After the Future
+        Running the Future
+        Future is complete
+        
+        
+
+
+
 
