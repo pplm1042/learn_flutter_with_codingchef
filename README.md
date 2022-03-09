@@ -122,7 +122,7 @@
 
   
 ## 2022.03.09.
-<Future - async 심화 개념 정리> 
+<Future - async 심화 개념 정리>  [관련 프로젝트](https://github.com/pplm1042/codingchef_future_ex)
 ### Future
 1. 다트에 의해서 future 객체가 내부적인 배열에 등록
 2. Future 관련해서 실행되어야 하는 코드들이 이벤트 큐에 등록
